@@ -67,3 +67,19 @@ The JSX tree will be like this:
 }
 ```
 
+## 3. Create a Component
+A component has it own type.
+
+```jsx
+{
+  $$typeof: Symbol.for("react.element"),
+  type: MyComponent,
+  props: {
+    /* ... */
+  }
+}
+```
+
+## 4. Async component
+Basically, async component is a component that returns a promise. Our server will wait for the promise to resolve before sending the response to the client.
+By modifying the `renderJSXToHTML` function, we can handle the async component.
