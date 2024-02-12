@@ -83,3 +83,8 @@ A component has it own type.
 ## 4. Async component
 Basically, async component is a component that returns a promise. Our server will wait for the promise to resolve before sending the response to the client.
 By modifying the `renderJSXToHTML` function, we can handle the async component.
+
+## 5. Preserve state on navigation
+1. Add some client-side JS logic to intercept navigations (so we can refetch content manually without reloading the page). 
+2. Teach our server to serve JSX over the wire instead of HTML for subsequent navigations. 
+3. Teach the client to apply JSX updates without destroying the DOM (hint: we'll use React for that part).
